@@ -1,8 +1,8 @@
-import 'package:driven/features/create_goal/views/screens/create_goal_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'features/create_goal/views/providers/create_goal_provider.dart';
+import 'features/create_goal/views/screens/create_goal_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => CreateGoalProvider()),
+        ChangeNotifierProvider<CreateGoalProvider>(
+            create: (_) => CreateGoalProvider()),
       ],
       child: MaterialApp(
         title: 'Driven',
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
         home: const CreateGoalScreen(),
         routes: <String, WidgetBuilder>{
-          CreateGoalScreen.routeName: (context) => const CreateGoalScreen(),
+          CreateGoalScreen.routeName: (_) => const CreateGoalScreen(),
         },
       ),
     );

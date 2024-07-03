@@ -76,7 +76,7 @@ class CustomTextFormFieldState extends State<CustomTextFormField> {
         children: <Widget>[
           Text(
             widget.labelText,
-            style: const TextStyle(fontWeight: FontWeight.w500),
+            style: const TextStyle(fontWeight: FontWeight.w300),
           ),
           const SizedBox(height: 2),
           TextFormField(
@@ -95,11 +95,7 @@ class CustomTextFormFieldState extends State<CustomTextFormField> {
             textAlign: widget.textAlign,
             onChanged: widget.onChanged,
             minLines: widget.isExpanded ? widget.maxLines : widget.minLines,
-            maxLines: widget.isExpanded
-                ? widget.maxLines
-                : (widget._controller!.text.isEmpty)
-                    ? 1
-                    : widget.maxLines,
+            maxLines: widget.isExpanded ? widget.maxLines : widget.maxLines,
             maxLength: widget.maxLength,
             style: widget.style,
             validator: (String? value) =>
@@ -108,13 +104,13 @@ class CustomTextFormFieldState extends State<CustomTextFormField> {
             cursorColor: Theme.of(context).colorScheme.secondary,
             decoration: InputDecoration(
               contentPadding: const EdgeInsets.symmetric(horizontal: 12),
-              filled: true,
-              fillColor: widget.color ??
-                  Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .color!
-                      .withOpacity(0.05),
+              // filled: true,
+              // fillColor: widget.color ??
+              //     Theme.of(context)
+              //         .textTheme
+              //         .bodyLarge!
+              //         .color!
+              //         .withOpacity(0.05),
               hintText: widget.hint,
               prefix: widget.prefixIcon,
               hintStyle: TextStyle(color: Colors.grey.shade400),
