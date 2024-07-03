@@ -3,6 +3,7 @@ enum GoalType {
   finance('finance', 'Finance'),
   health('health', 'Health'),
   personal('personal', 'Personal'),
+  professional('professional', 'Professional'),
   relationship('relationship', 'Relationship'),
   social('social', 'Social'),
   spiritual('spiritual', 'Spiritual'),
